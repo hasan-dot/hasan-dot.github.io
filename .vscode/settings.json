@@ -26,5 +26,20 @@
   // Run tasks in macOS
   "terminal.integrated.profiles.osx": {
     "zsh": { "path": "/bin/zsh", "args": ["-l", "-i"] }
-  }
+  },
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "/bin/bash",
+      "args": ["-l"]
+    },
+    "zsh": {
+      "path": "/bin/zsh",
+      "args": ["-l"]
+    },
+    "gh-cli": {
+      "path": "gh",
+      "args": ["codespace", "ssh"]
+    }
+  },
+  "terminal.integrated.defaultProfile.linux": "bash"
 }
