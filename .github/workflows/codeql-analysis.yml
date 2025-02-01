@@ -32,6 +32,13 @@ jobs:
         with:
           languages: ${{ matrix.language }}
 
+      - name: Setup Ruby
+        if: matrix.language == 'ruby'
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.3
+          bundler-cache: true
+
       - name: Build code
         run: |
           if [[ "${{ matrix.language }}" == "ruby" ]]; then
