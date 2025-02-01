@@ -58,7 +58,7 @@ webmaster_verifications:
 # Web Analytics Settings
 analytics:
   google:
-    id: # fill in your Google Analytics ID
+    id: 10215343914
   goatcounter:
     id: # fill in your GoatCounter ID
   umami:
@@ -75,8 +75,6 @@ analytics:
 # Page views settings
 pageviews:
   provider: # now only supports 'goatcounter'
-
-disable_disk_cache: true # fuck cache
 
 # Prefer color scheme setting.
 #
