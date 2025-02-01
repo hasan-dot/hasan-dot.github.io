@@ -71,6 +71,9 @@ analytics:
     id: # fill in your Cloudflare Web Analytics token
   fathom:
     id: # fill in your Fathom Site ID
+  plausible:
+    domain: 'hasan-dot.github.io' # The domain of the Plausible Analytics
+    source: 'https://plausible.io/js/script.js'
 
 # Page views settings
 pageviews:
