@@ -72,11 +72,6 @@ analytics:
   fathom:
     id: # fill in your Fathom Site ID
 
-jekyll_analytics:
-  Plausible:
-    domain: "hasan-dot.github.io" # The domain of the Plausible Analytics
-    source: "https://plausible.io/js/script.js"
-
 # Page views settings
 pageviews:
   provider: # now only supports 'goatcounter'
