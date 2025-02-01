@@ -1,0 +1,46 @@
+name: "CodeQL Analysis"
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+  schedule:
+    - cron: '0 0 * * 0' # Runs every Sunday at midnight
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        language: [ 'ruby', 'javascript' ]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v2
+        with:
+          languages: ${{ matrix.language }}
+
+      - name: Build code
+        run: |
+          if [[ "${{ matrix.language }}" == "ruby" ]]; then
+            bundle install
+            bundle exec jekyll build
+          elif [[ "${{ matrix.language }}" == "javascript" ]]; then
+            npm install
+            npm run build
+          fi
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v2
