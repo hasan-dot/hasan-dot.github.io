@@ -74,12 +74,14 @@ analytics:
 
 jekyll_analytics:
   Plausible:
-    domain: 'hasan-dot.github.io' # The domain of the Plausible Analytics
-    source: 'https://plausible.io/js/script.js'
+    domain: "hasan-dot.github.io" # The domain of the Plausible Analytics
+    source: "https://plausible.io/js/script.js"
 
 # Page views settings
 pageviews:
   provider: # now only supports 'goatcounter'
+
+disable_disk_cache: true # fuck cache
 
 # Prefer color scheme setting.
 #
