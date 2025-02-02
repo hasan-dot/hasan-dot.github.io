@@ -10,12 +10,14 @@ refactor: true
 
 {% assign posts = '' | split: '' %}
 
+<!-- About -->
+{% include about.html %}
+
+<h1 style="text-align: center; margin-top: 0;">Posts</h1>
 <!-- Get pinned posts on current page -->
 
 {% assign visible_start = paginator.page | minus: 1 | times: paginator.per_page %}
 {% assign visible_end = visible_start | plus: paginator.per_page %}
-
-{% include about.html %}
 
 {% if all_pinned.size > visible_start %}
   {% if all_pinned.size > visible_end %}
