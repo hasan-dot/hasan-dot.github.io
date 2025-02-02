@@ -3,6 +3,7 @@ title: "From Lebanon to Germany: Working as a tech expat in Munich"
 media_subpath: /assets/2022-04-21-from-lebanon-to-germany/
 categories: [Career, Relocation]
 tags: [Germany, Lebanon, Tech Expat, Job Interview, e-bot7, Munich]
+authors: [e_bot7, me]
 ---
 
 > This was [originally posted](https://web.archive.org/web/20220421085635/https://e-bot7.com/insider/from-lebanon-to-germany-working-as-a-tech-expat-in-munich/) by my previous employer e-bot7.
