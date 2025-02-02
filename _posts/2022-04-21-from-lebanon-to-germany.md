@@ -1,13 +1,12 @@
 ---
-media_subpath: /assets/2022-04-21-from-lebanon-to-germany/img/
+title: "From Lebanon to Germany: Working as a tech expat in Munich"
+media_subpath: /assets/2022-04-21-from-lebanon-to-germany/
 ---
 
 > This was [originally posted](https://web.archive.org/web/20220421085635/https://e-bot7.com/insider/from-lebanon-to-germany-working-as-a-tech-expat-in-munich/) by my previous employer e-bot7.
 {: .prompt-info }
 
-# From Lebanon to Germany: Working as a tech expat in Munich
-
-![me in munich](hasan-munich.jpg)
+![me in munich](img/hasan-munich.jpg)
 ## Why did you want to move to Germany?
 
 I have always wanted to move to Europe. It was kind of the go-to since there are plenty of opportunities and diverse culture that combines many countries. The idea became more serious when the political and financial situation in Lebanon drastically shifted, so, I started my research in the European job market. I thought it was going to be very difficult, especially with having to know the host country’s language to be able to get hired. Additionally, I was keeping in mind that the visa process is not easy and that I would need sponsorship from the prospective company. 
@@ -22,7 +21,7 @@ Once I applied as a Python Engineer and the interview process began shortly afte
 
 My first day at work was unforgettable! I remember opening my email for the first time, and from there, undergoing the onboarding process and attending meetings. Frankly, it turned out to be the most fun part. It was a very smooth onboarding process, filled with a lot of useful information on how the team works together and how the teams interact with each other. Within one week, I got my first real project to work on, and it was super exciting. By the end of the first month, I was really happy with everything at the company. For me, it was obvious that I was going to love it because I had all the chances to work in a team that functions like a family. So, I had no reason to complain. I was mainly doing software development during that period. At the same time, I was going through different trainings and onboarding sessions with the support of my colleagues and getting to know the platform more and more.
 
-![me in munich](hasan-beirut.jpg)
+![me in munich](img/hasan-beirut.jpg)
 
 ## How has e-bot7 developed your professional career?
 
