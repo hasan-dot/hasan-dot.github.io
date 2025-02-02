@@ -1,6 +1,8 @@
 ---
 title: "🌟 From SE Factory to GitHub: Hassan Hawache’s Top 10 Tips for Landing a Job in Tech!"
 media_subpath: /assets/2024-08-28-from-se-factory-github/
+categories: [Career, Tech Tips]
+tags: [SE Factory, GitHub, Software Engineering, Job Tips, Career Advice, Bootcamp]
 ---
 
 {: .prompt-info }
