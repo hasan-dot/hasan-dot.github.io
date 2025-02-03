@@ -101,6 +101,7 @@ comments:
     repo: hasan-dot/hasan-dot.github.io
     issue_term: title
     theme: github-dark
+    label: utterances
 
 # Self-hosted static assets, optional › https://github.com/cotes2020/chirpy-static-assets
 assets:
