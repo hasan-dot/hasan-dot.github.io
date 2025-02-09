@@ -1,6 +1,5 @@
 ---
 title: "Comments are now supported 💬💥🎉"
-media_subpath: /assets/2022-04-21-from-lebanon-to-germany/
 categories: [Blog, Annoucement]
 tags: [Blog, Comments, GitHub, GitHub Issues, utterances]
 authors: [me]
