@@ -1,0 +1,30 @@
+---
+layout: site
+---
+
+{% assign topics = site[page.kind] | sort %}
+
+<section class="archive-page" aria-labelledby="topics-title">
+  <header class="archive-header">
+    <a class="text-link" href="{{ '/archives/' | relative_url }}"><span aria-hidden="true">&larr;</span> All posts</a>
+    <h1 id="topics-title">{{ page.title | escape }}</h1>
+    <p>{{ page.description | escape }}</p>
+  </header>
+
+  <div class="archive-toolbar">
+    {% include archive-navigation.html %}
+  </div>
+
+  <div class="topic-list">
+    {% for topic in topics %}
+      {% assign posts = topic[1] | where_exp: 'post', 'post.hidden != true' %}
+      {% if posts.size > 0 %}
+        <a class="topic-link" href="{{ site.baseurl }}/{{ page.kind }}/{{ topic[0] | slugify | url_encode }}/">
+          <span>{{ topic[0] | escape }}</span>
+          <span class="topic-count">{{ posts.size }} {% if posts.size == 1 %}post{% else %}posts{% endif %}</span>
+          <span class="writing-arrow" aria-hidden="true">&#8599;</span>
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>

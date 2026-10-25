@@ -1,0 +1,5 @@
+<nav aria-label="Browse posts">
+  <a href="{{ '/archives/' | relative_url }}"{% if page.url == '/archives/' %} aria-current="page"{% endif %}>All posts</a>
+  <a href="{{ '/categories/' | relative_url }}"{% if page.url == '/categories/' %} aria-current="page"{% endif %}>Categories</a>
+  <a href="{{ '/tags/' | relative_url }}"{% if page.url == '/tags/' %} aria-current="page"{% endif %}>Tags</a>
+</nav>
