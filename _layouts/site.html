@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#080c0b">
+    {% capture seo_tags %}{% seo %}{% endcapture %}
+    {% if page.image %}
+      {% assign image_src = page.image.path | default: page.image %}
+      {% unless image_src contains '://' %}
+        {% capture image_url %}{% include media-url.html src=image_src subpath=page.media_subpath absolute=true %}{% endcapture %}
+        {% assign original_image_url = image_src | absolute_url %}
+        {% assign post_image_url = page.url | append: image_src | absolute_url %}
+        {% assign seo_tags = seo_tags | replace: post_image_url, image_url | replace: original_image_url, image_url %}
+      {% endunless %}
+    {% endif %}
+    {{ seo_tags }}
+    {% unless page.image %}
+      {% if site.social_preview_image %}
+      <meta property="og:image" content="{{ site.social_preview_image | absolute_url }}">
+      <meta name="twitter:image" content="{{ site.social_preview_image | absolute_url }}">
+      {% endif %}
+    {% endunless %}
+    <link rel="alternate" type="application/atom+xml" title="{{ site.title | escape }}" href="{{ '/feed.xml' | absolute_url }}">
+    {% include favicons.html %}
+    {% include metadata-hook.html %}
+    {% if page.layout == 'post' %}
+      {% include origin-type.html %}
+      <link rel="stylesheet" href="{{ site.data.origin[type].fontawesome.css | relative_url }}">
+      <link rel="stylesheet" href="{{ site.data.origin[type].glightbox.css | relative_url }}">
+      <link rel="stylesheet" href="{{ '/assets/css/reading.css' | relative_url }}">
+      <script defer src="{{ site.data.origin[type].glightbox.js | relative_url }}"></script>
+      <script defer src="{{ '/assets/js/reading.js' | relative_url }}"></script>
+    {% endif %}
+    {% if jekyll.environment == 'production' and site.analytics.google.id %}
+      {% include analytics/google.html %}
+    {% endif %}
+  </head>
+  <body class="personal-site">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="wordmark" href="{{ '/' | relative_url }}" aria-label="Hassan Hawache, home">
+          <span class="prompt" aria-hidden="true">~</span> hasan-dot
+        </a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="{{ '/' | relative_url }}#work">Work</a>
+          <a href="{{ '/' | relative_url }}#writing">Blog</a>
+          <a href="{{ '/' | relative_url }}#about">About</a>
+        </nav>
+      </header>
+      <main id="main-content" tabindex="-1">
+        {{ content }}
+      </main>
+      <footer class="site-footer">
+        <span>&copy; {{ 'now' | date: '%Y' }} Hassan Hawache</span>
+        <div class="footer-links">
+          <a href="https://github.com/{{ site.github.username }}">GitHub</a>
+          <a href="https://www.linkedin.com/in/hasan-dot">LinkedIn</a>
+          <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
