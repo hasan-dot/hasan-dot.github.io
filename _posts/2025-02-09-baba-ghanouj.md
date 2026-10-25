@@ -18,7 +18,7 @@ That being said, I was also asked (a lot!) for my recipe for [Baba Ghanoush, als
 
 Back in Lebanon, I never tried to make Baba Ghanoush—or any dish, for that matter 😅. I guess I always took the amazing Lebanese food for granted, whether at family dinners or restaurants. But once [I moved to Munich](/posts/from-lebanon-to-germany/), I learned the hard way: authentic Lebanese cuisine is almost impossible to find here. You'll find a handful of places claiming to serve Lebanese food, but most aren't even remotely authentic. Unfortunately, they just use the cuisine's good reputation for marketing. And for someone who's never tasted real Lebanese food, it's impossible to tell the difference—after all, if you've never experienced authentic flavors, how would you know what you're missing? 🤷‍♂️
 
-After learning my lesson, I started cooking everything at home. Baba Ghanoush quickly became one of my top dishes, and I think I've perfected the recipe. EVERY person I've served it to has LOVED it! Seriously, I'm not kidding (or trying to brag!). Even my lovely wife, [Zoya](/moments/)—who **hates** eggplants—tried it once and admitted she liked it despite her lifelong eggplant aversion 😆.
+After learning my lesson, I started cooking everything at home. Baba Ghanoush quickly became one of my top dishes, and I think I've perfected the recipe. EVERY person I've served it to has LOVED it! Seriously, I'm not kidding (or trying to brag!). Even my lovely wife, Zoya—who **hates** eggplants—tried it once and admitted she liked it despite her lifelong eggplant aversion 😆.
 
 In this post, I'll walk you through a super simple, easy-to-make-at-home Baba Ghanoush recipe. I hope you'll love it as much as we do!
 
@@ -60,4 +60,3 @@ In this post, I'll walk you through a super simple, easy-to-make-at-home Baba Gh
 Now that you have the recipe, do with it what you wish 🫡. I hope you enjoy it! Let me know in the comments how it turned out, and feel free to share pictures! 📸 😋
 
 [^1]: Always keep food safety in mind—make sure it's covered and stored at 0-5°C, out of direct sunlight, or it'll spoil 😭.
-
