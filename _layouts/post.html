@@ -1,0 +1,128 @@
+---
+layout: site
+---
+
+{% include lang.html %}
+{% assign post_labels = site.data.locales[lang].post %}
+{% assign date_format = site.data.locales[lang].df.post.strftime %}
+
+<article class="reading-post">
+  <header class="article-header">
+    <a class="back-link" href="{{ '/' | relative_url }}#writing"><span aria-hidden="true">&larr;</span> Back to the blog</a>
+    <p class="eyebrow"><span class="prompt" aria-hidden="true">~/</span> {{ page.categories | first | default: 'Blog' | escape }}</p>
+    <h1>{{ page.title | escape }}</h1>
+    {% if page.description %}
+      <p class="article-description">{{ page.description | escape }}</p>
+    {% endif %}
+    <div class="article-meta">
+      <span>{{ post_labels.posted }} <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: date_format }}</time></span>
+      <span>{% include read-time.html content=content prompt=true lang=lang %}</span>
+      {% if page.last_modified_at and page.last_modified_at != page.date %}
+        <span>{{ post_labels.updated }} <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">{{ page.last_modified_at | date: date_format }}</time></span>
+      {% endif %}
+    </div>
+    <p class="article-byline">
+      {{ post_labels.written_by }}
+      {% assign authors = page.author | default: page.authors %}
+      {% if authors %}
+        {% for author in authors %}
+          {% assign author_data = site.data.authors[author] %}
+          {% if author_data.url %}
+            <a href="{{ author_data.url }}">{{ author_data.name | default: author | escape }}</a>
+          {% else %}
+            {{ author_data.name | default: author | escape }}
+          {% endif %}
+          {% unless forloop.last %}<span class="author-separator">&amp;</span>{% endunless %}
+        {% endfor %}
+      {% else %}
+        <a href="{{ '/' | relative_url }}">{{ site.social.name | escape }}</a>
+      {% endif %}
+    </p>
+  </header>
+
+  {% if page.image %}
+    {% assign image_src = page.image.path | default: page.image %}
+    {% capture image_url %}{% include media-url.html src=image_src subpath=page.media_subpath %}{% endcapture %}
+    <figure class="article-cover">
+      <a class="popup" href="{{ image_url }}">
+        <img src="{{ image_url }}" alt="{{ page.image.alt | default: page.title | escape }}">
+      </a>
+      {% if page.image.alt %}<figcaption>{{ page.image.alt | escape }}</figcaption>{% endif %}
+    </figure>
+  {% endif %}
+
+  {% if site.toc and page.toc %}
+    <details class="article-toc" hidden>
+      <summary>{{ site.data.locales[lang].panel.toc }}</summary>
+      <nav aria-label="{{ site.data.locales[lang].panel.toc }}"><ol></ol></nav>
+    </details>
+  {% endif %}
+
+  <div class="article-body">
+    {% include refactor-content.html content=content lang=lang %}
+  </div>
+
+  <footer class="article-footer">
+    {% if page.categories.size > 0 or page.tags.size > 0 %}
+      <div class="article-taxonomy">
+        {% if page.categories.size > 0 %}
+          <div>
+            <span>Filed under</span>
+            {% for category in page.categories %}
+              <a href="{{ site.baseurl }}/categories/{{ category | slugify | url_encode }}/">{{ category | escape }}</a>
+            {% endfor %}
+          </div>
+        {% endif %}
+        {% if page.tags.size > 0 %}
+          <div>
+            <span>Tagged</span>
+            {% for tag in page.tags %}
+              <a href="{{ site.baseurl }}/tags/{{ tag | slugify | url_encode }}/">{{ tag | escape }}</a>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+    <div class="article-tools">
+      {% include post-sharing.html lang=lang %}
+      {% include post-edit.html lang=lang %}
+    </div>
+    {% if site.data.locales[lang].copyright.license.template %}
+      {% capture license_link %}
+        <a href="{{ site.data.locales[lang].copyright.license.link }}">{{ site.data.locales[lang].copyright.license.name }}</a>
+      {% endcapture %}
+      <p class="article-license">{{ site.data.locales[lang].copyright.license.template | replace: ':LICENSE_NAME', license_link }}</p>
+    {% endif %}
+  </footer>
+</article>
+
+<div class="article-related">
+  {% include related-posts.html lang=lang %}
+</div>
+
+{% if page.previous.url or page.next.url %}
+  <nav class="article-navigation" aria-label="Post navigation">
+    {% if page.previous.url %}
+      <a href="{{ page.previous.url | relative_url }}">
+        <span class="navigation-label">&larr; {{ post_labels.button.previous }}</span>
+        <span>{{ page.previous.title | escape }}</span>
+      </a>
+    {% endif %}
+    {% if page.next.url %}
+      <a class="next-post" href="{{ page.next.url | relative_url }}">
+        <span class="navigation-label">{{ post_labels.button.next }} &rarr;</span>
+        <span>{{ page.next.title | escape }}</span>
+      </a>
+    {% endif %}
+  </nav>
+{% endif %}
+
+{% if page.comments and site.comments.provider %}
+  <section class="article-comments" aria-labelledby="comments-title">
+    <h2 id="comments-title">Comments</h2>
+    {% if site.comments.provider == 'utterances' %}
+      <p>Sign in with GitHub to leave a comment.</p>
+    {% endif %}
+    {% include comment.html %}
+  </section>
+{% endif %}
